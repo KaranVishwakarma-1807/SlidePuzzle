@@ -186,9 +186,7 @@ Players can:
 
 ## Download APK
 
-```md
-[Download APK](https://github.com/KaranVishwakarma-1807/SlidePuzzle/releases)
-```
+[Download SlidePuzzle APK](apk/SlidePuzzle-v1.0.1.apk)
 
 ---
 
