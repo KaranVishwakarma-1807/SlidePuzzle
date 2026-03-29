@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SlidePuzzle</string>
+    <string name="camera_permission_denied">Camera permission is required to take photos.</string>
+    <string name="gallery_permission_denied">Storage permission is required to pick photos.</string>
+</resources>
