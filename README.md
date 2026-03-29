@@ -15,15 +15,17 @@ A modern Android slide puzzle game built with **Kotlin** and **Jetpack Compose**
 
 > Game screenshots and preview
 
-```md
-![Home Screen](screenshots/home.png)
-![Game Screen](screenshots/game.png)
-![Settings Screen](screenshots/settings.png)
-```
+<p align="center">
+  <img src="screenshots/home.png" width="250"/>
+  <img src="screenshots/game.png" width="250"/>
+  <img src="screenshots/settings.png" width="250"/>
+</p>
 
-```md
-![Gameplay Demo](screenshots/demo.gif)
-```
+#### Gameplay Demo
+
+<p align="center">
+  <img src="screenshots/demo.gif" width="250"/>
+</p>
 
 ---
 
