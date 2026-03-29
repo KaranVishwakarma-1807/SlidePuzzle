@@ -6,6 +6,7 @@
 ![Architecture](https://img.shields.io/badge/Architecture-MVVM-orange)
 ![Database](https://img.shields.io/badge/Database-Room-red)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+![Release](https://img.shields.io/github/v/release/KaranVishwakarma-1807/SlidePuzzle)
 
 A modern Android slide puzzle game built with **Kotlin** and **Jetpack Compose**, featuring customizable grid sizes, custom image puzzles, smooth animations, immersive audio, and a polished Material 3 design.
 
