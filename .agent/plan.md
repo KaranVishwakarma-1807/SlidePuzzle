@@ -1,103 +1,247 @@
-# Project Plan
+# SlidePuzzle
 
-SlidePuzzle: A slide puzzle game with various grid sizes (3x3, 4x4, 5x5, custom up to 10x10). Features include predefined images, user-uploaded images, timer, move counter, random mode, cozy layout with smooth animations, music (home and game screens), SFX, settings for audio control, and player profiles. Refinements include a mini preview image, integrated audio assets, and an animated "blurred beams" background.
+![Platform](https://img.shields.io/badge/Platform-Android-green)
+![Language](https://img.shields.io/badge/Language-Kotlin-purple)
+![UI](https://img.shields.io/badge/UI-Jetpack%20Compose-blue)
+![Architecture](https://img.shields.io/badge/Architecture-MVVM-orange)
+![Database](https://img.shields.io/badge/Database-Room-red)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
+A modern Android slide puzzle game built with **Kotlin** and **Jetpack Compose**, featuring customizable grid sizes, custom image puzzles, smooth animations, immersive audio, and a polished Material 3 design.
 
-## Project Brief: SlidePuzzle
+---
 
-SlidePuzzle is a modern, immersive take on the classic sliding tile puzzle, featuring high customization, dynamic visuals, and a rich audio
- experience.
+## Preview
+
+> Game screenshots and preview
+
+```md
+![Home Screen](screenshots/home.png)
+![Game Screen](screenshots/game.png)
+![Settings Screen](screenshots/settings.png)
+```
+
+```md
+![Gameplay Demo](screenshots/demo.gif)
+```
+
+---
 
 ## Features
-*   **Dynamic Grid Engine**: Supports grid sizes from 3x3 up to 10x10 with smooth, physics-based tile animations and a real-time mini-preview of the solved state for reference.
-*   **Personalized Puzzles**: Allows players to use high
--quality predefined images or upload their own photos via gallery/camera to create custom challenges.
-*   **"Alive" Visual Design**: Features a cozy Material 3 layout with an animated "blurred beams" flowing background and full edge-to-edge display support.
-*   **Immersive Audio System**: Context
--aware background music for home and game screens, paired with responsive SFX for tile movements and victory states.
-*   **Player Profiles & Tracking**: Local tracking of move counts, solving times, and user preferences stored within persistent player profiles.
 
-## High-Level Technical Stack
-*   **Language**: Kotlin
-*   
-**UI Framework**: Jetpack Compose (Material 3)
-*   **Architecture**: MVVM (Model-View-ViewModel)
-*   **Concurrency**: Kotlin Coroutines & Flow for game logic and reactive UI updates.
-*   **Image Handling**: Coil for efficient loading and transformation of internal and user-sourced images.
+* Dynamic puzzle sizes from **3x3 up to 10x10**
+* Smooth animated tile movement
+* Predefined puzzle images
+* User-uploaded images from gallery or camera
+* Random puzzle mode
+* Real-time timer
+* Move counter
+* Mini preview of solved image
+* Context-aware background music
+* Sound effects for tile movement and victory
+* Player profile support
+* Persistent local high score tracking
+* Audio settings controls
+* Cozy Material 3 UI with animated background
 
-*   **Code Generation**: **KSP (Kotlin Symbol Processing)** for Room and Moshi.
-*   **Persistence**: Room Database for managing player profiles and high scores.
-*   **Audio**: Jetpack Media3 for high-performance background music and SFX playback.
+---
 
-## Implementation Steps
+## Tech Stack
 
-### Task_1_Foundation_Logic: Initialize Room database for player profiles and high scores. Implement the core sliding puzzle logic including grid management (3x3 to 10x10), shuffling algorithm (ensuring solvability), move validation, and tile-splitting logic. Add Media3 dependencies for audio support.
-- **Status:** COMPLETED
-- **Updates:** Initialized Room database for player profiles and high scores. Implemented the core sliding puzzle logic including grid management (3x3 to 10x10), shuffling algorithm (ensuring solvability), move validation, and tile-splitting logic. Added Media3 dependencies for audio support.
-- **Acceptance Criteria:**
-  - Room database is correctly initialized
-  - Puzzle engine handles grid generation and move validation
-  - Image splitting logic correctly partitions images into tiles
-  - Project builds successfully with new dependencies
+* **Language:** Kotlin
+* **UI Framework:** Jetpack Compose (Material 3)
+* **Architecture:** MVVM
+* **Database:** Room Database
+* **Image Loading:** Coil
+* **Audio:** Media3
+* **Concurrency:** Kotlin Coroutines + Flow
+* **Code Processing:** KSP
 
-### Task_2_Navigation_Settings_Audio: Set up Jetpack Compose Navigation. Implement the Material 3 theme with a vibrant, energetic color scheme and Edge-to-Edge support. Create the Home, Player Profile, and Settings screens. Integrate Media3 for background music (BGM) and sound effects (SFX) with persistent user controls.
-- **Status:** COMPLETED
-- **Updates:** Set up Jetpack Compose Navigation. Implement the Material 3 theme with a vibrant, energetic color scheme and Edge-to-Edge support. Create the Home, Player Profile, and Settings screens. Integrate Media3 for background music (BGM) and sound effects (SFX) with persistent user controls.
-- **Acceptance Criteria:**
-  - Navigation between Home, Profile, and Settings works
-  - Vibrant M3 theme and Edge-to-Edge are applied
-  - Audio (BGM/SFX) plays correctly and responds to Settings toggles
-  - App does not crash during navigation or audio playback
+---
 
-### Task_3_Game_Experience: Develop the main Game screen. Implement the dynamic tile grid with smooth, physics-based animations. Integrate the real-time timer and move counter. Connect the puzzle engine to the UI to handle user interactions and detect win states.
-- **Status:** COMPLETED
-- **Updates:** Develop the main Game screen. Implement the dynamic tile grid with smooth, physics-based animations. Integrate the real-time timer and move counter. Connect the puzzle engine to the UI to handle user interactions and detect win states.
-- **Acceptance Criteria:**
-  - Game screen displays interactive grids for various sizes
-  - Tiles animate smoothly when moved
-  - Timer and move counter update accurately
-  - Win condition is detected and handled with UI feedback
+## Project Architecture
 
-### Task_4_Image_Integration_Random: Implement image selection from a predefined library using Coil. Add support for user-uploaded images via Gallery and Camera permissions. Implement 'Random Mode' for unpredictable gameplay sessions.
-- **Status:** COMPLETED
-- **Updates:** Implement image selection from a predefined library using Coil. Add support for user-uploaded images via Gallery and Camera permissions. Implement 'Random Mode' for unpredictable gameplay sessions.
-- **Acceptance Criteria:**
-  - Predefined image library is accessible
-  - User can successfully start a puzzle with a Gallery or Camera photo
-  - Random Mode generates valid puzzles with random grids/images
-  - All existing tests pass
+The application is structured into the following major parts:
 
-### Task_5_Polish_Icon_Verify: Perform final UI polish to ensure a 'strong Android and Material design aesthetic'. Create an adaptive app icon matching the game theme. Conduct a final 'Run and Verify' to ensure application stability, performance, and alignment with all project requirements.
-- **Status:** COMPLETED
-- **Updates:** Performed final UI polish and adaptive icon implementation.
-- **Acceptance Criteria:**
-  - Adaptive app icon is implemented and visible
-  - Vibrant theme is consistent across all screens
-  - App is stable and crash-free
-  - Final build pass and requirements are fully met
+* **Puzzle Engine**
+  Handles grid generation, tile movement rules, solvable shuffling, and win-state detection.
 
-### Task_6_Alive_UI_Refinements: Implement the 'Alive' visual design refinements. Develop the 'blurred beams' animated background and add the mini-preview image of the solved state to the Game screen. Adjust the layout to achieve a 'cozy' Material 3 aesthetic.
-- **Status:** COMPLETED
-- **Updates:** Implemented the 'Alive' visual design refinements. Develop the 'blurred beams' animated background and add the mini-preview image of the solved state to the Game screen. Adjust the layout to achieve a 'cozy' Material 3 aesthetic.
-- **Acceptance Criteria:**
-  - Blurred beams background is animated and visible
-  - Mini-preview image correctly shows the target solved state
-  - UI follows the updated 'cozy' Material 3 design aesthetic
-  - Project builds successfully
+* **UI Layer**
+  Built using Jetpack Compose with Material 3 styling and edge-to-edge support.
 
-### Task_7_Audio_Integration_Final_Verify: Integrate final audio assets for context-aware background music (Home vs. Game screens) and responsive sound effects. Perform a final 'Run and Verify' to ensure stability, performance, and alignment with the refined project brief.
-- **Status:** COMPLETED
-- **Updates:** Integrated final audio assets for context-aware background music (Home vs. Game screens) and responsive sound effects. Perform a final 'Run and Verify' to ensure stability, performance, and alignment with the refined project brief.
-Context-aware BGM transitions correctly between Home and Game screens.
-High-quality SFX are integrated for movements and victory.
-Build pass, all tests pass, and app does not crash.
-Critic_agent confirms alignment with all user requirements.
-Verified the implementation with a successful clean build and unit tests for the PuzzleEngine logic (4 passed).
-The app is confirmed to be stable, crash-free, and fully aligned with all project requirements.
-- **Acceptance Criteria:**
-  - Context-aware BGM transitions correctly between Home and Game screens
-  - High-quality SFX are integrated for movements and victory
-  - Build pass, all tests pass, and app does not crash
-  - Critic_agent confirms alignment with all user requirements
-- **Duration:** N/A
+* **Navigation Layer**
+  Manages transitions between Home, Game, Profile, and Settings screens.
 
+* **Persistence Layer**
+  Uses Room Database to store player data, preferences, and high scores.
+
+* **Audio Manager**
+  Controls background music and sound effects across screens.
+
+* **Image Pipeline**
+  Supports predefined images and custom user-supplied images from gallery/camera.
+
+---
+
+## Gameplay Features
+
+### Dynamic Grid Engine
+
+Supports multiple puzzle sizes:
+
+* 3x3
+* 4x4
+* 5x5
+* Custom sizes up to 10x10
+
+### Personalized Puzzle Experience
+
+Players can:
+
+* Choose built-in puzzle images
+* Upload their own images
+* Capture photos using the camera
+* Play with random image and grid combinations
+
+### Immersive UI Design
+
+* Material 3 design
+* Edge-to-edge display
+* Smooth tile animations
+* Animated blurred beams background
+* Mini preview image of solved state
+
+### Audio Experience
+
+* Separate music for Home and Game screens
+* Tile move sound effects
+* Victory sound feedback
+* Audio toggles in Settings
+
+---
+
+## Development Details
+
+### Foundation Logic
+
+* Initialized Room database for player profiles and high scores
+* Built the puzzle engine for dynamic grid generation
+* Implemented solvable shuffling logic
+* Added tile movement validation
+* Created image tile-splitting logic
+
+### Navigation and Settings
+
+* Integrated Jetpack Compose Navigation
+* Built Home screen
+* Built Player Profile screen
+* Built Settings screen
+* Added persistent controls for BGM and SFX
+
+### Game Experience
+
+* Developed the main Game screen
+* Connected puzzle engine with reactive UI updates
+* Added timer system
+* Added move counter
+* Implemented win-state detection and feedback
+
+### Image Integration
+
+* Added predefined image selection
+* Enabled gallery image upload
+* Added camera image support
+* Implemented Random Mode
+
+### UI Polish
+
+* Added adaptive app icon
+* Refined Material 3 theme
+* Improved visual consistency
+* Added smooth transitions and cozy layout refinement
+
+### Alive UI Refinements
+
+* Added animated blurred beams background
+* Added mini preview image of solved state
+* Enhanced overall app feel with more immersive visuals
+
+### Final Audio Integration
+
+* Added Home screen background music
+* Added Game screen background music
+* Added tile move sound effects
+* Added victory sound effects
+
+### Verification
+
+* Successful clean build completed
+* Unit tests passed
+* Puzzle engine behavior validated
+* App verified to be stable and crash-free
+
+---
+
+## Download APK
+
+```md
+[Download APK](https://github.com/KaranVishwakarma-1807/SlidePuzzle/releases)
+```
+
+---
+
+## How to Run
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/KaranVishwakarma-1807/SlidePuzzle.git
+```
+
+2. Open the project in **Android Studio**
+3. Sync Gradle
+4. Run on an emulator or physical Android device
+
+---
+
+## Repository Structure
+
+```bash
+SlidePuzzle/
+├── app/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   ├── res/
+│   │   │   └── AndroidManifest.xml
+│   ├── build.gradle.kts
+├── gradle/
+├── build.gradle.kts
+├── settings.gradle.kts
+└── README.md
+```
+
+---
+
+## Future Improvements
+
+* Online leaderboard
+* Cloud save support
+* Difficulty presets
+* Multiplayer challenge mode
+* Achievement system
+* Daily puzzle mode
+
+---
+
+## Author
+
+**Karan Vishwakarma**
+
+GitHub: [KaranVishwakarma-1807](https://github.com/KaranVishwakarma-1807)
+
+---
+
+## License
+
+This project is open for learning, personal development, and portfolio purposes.
